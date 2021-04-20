@@ -64,6 +64,12 @@ class I420FrameAdapter : public webrtc::I420BufferInterface {
     return frame_->stride(media::VideoFrame::kVPlane);
   }
 
+  uint8_t* MutableDataY() override { return const_cast<uint8_t*>(DataY()); }
+
+  uint8_t* MutableDataU() override { return const_cast<uint8_t*>(DataU()); }
+
+  uint8_t* MutableDataV() override { return const_cast<uint8_t*>(DataV()); }
+
  protected:
   scoped_refptr<media::VideoFrame> frame_;
 };
@@ -110,6 +116,12 @@ class I420AFrameAdapter : public webrtc::I420ABufferInterface {
   int StrideA() const override {
     return frame_->stride(media::VideoFrame::kAPlane);
   }
+
+  uint8_t* MutableDataY() override { return const_cast<uint8_t*>(DataY()); }
+
+  uint8_t* MutableDataU() override { return const_cast<uint8_t*>(DataU()); }
+
+  uint8_t* MutableDataV() override { return const_cast<uint8_t*>(DataV()); }
 
  protected:
   scoped_refptr<media::VideoFrame> frame_;
