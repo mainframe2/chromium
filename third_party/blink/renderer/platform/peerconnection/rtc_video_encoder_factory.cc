@@ -91,9 +91,6 @@ base::Optional<webrtc::SdpVideoFormat> VEAToWebRTCFormat(
       case media::H264PROFILE_HIGH:
         h264_profile = webrtc::H264::kProfileHigh;
         break;
-      //case media::H264PROFILE_HIGH444PREDICTIVEPROFILE:
-      //  h264_profile = webrtc::H264::kProfilePredictiveHigh444;
-      //  break;
       default:
         // Unsupported H264 profile in WebRTC.
         return base::nullopt;
