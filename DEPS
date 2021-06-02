@@ -201,7 +201,7 @@ vars = {
   'quiche_git': 'https://quiche.googlesource.com',
   'skia_git': 'https://skia.googlesource.com',
   'swiftshader_git': 'https://swiftshader.googlesource.com',
-  'webrtc': 'https://github.com',
+  'webrtc_git': 'https://github.com',
   #'webrtc_git': 'https://webrtc.googlesource.com',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling Skia
