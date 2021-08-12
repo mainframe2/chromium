@@ -39,7 +39,8 @@ absl::optional<media::VideoCodecProfile> WebRTCFormatToCodecProfile(
       return absl::nullopt;
 #endif
 
-    return media::VideoCodecProfile::H264PROFILE_MIN;
+    return media::VideoCodecProfile::
+        H264PROFILE_HIGH444PREDICTIVEPROFILE;  // media::VideoCodecProfile::H264PROFILE_MIN;
   } else if (sdp.name == "VP8") {
     return media::VideoCodecProfile::VP8PROFILE_MIN;
   } else if (sdp.name == "VP9") {
@@ -91,6 +92,9 @@ absl::optional<webrtc::SdpVideoFormat> VEAToWebRTCFormat(
         break;
       case media::H264PROFILE_HIGH:
         h264_profile = webrtc::H264::kProfileHigh;
+        break;
+      case media::H264PROFILE_HIGH444PREDICTIVEPROFILE:
+        h264_profile = webrtc::H264::kProfilePredictiveHigh444;
         break;
       default:
         // Unsupported H264 profile in WebRTC.
