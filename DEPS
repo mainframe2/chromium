@@ -214,7 +214,8 @@ vars = {
   'quiche_git': 'https://quiche.googlesource.com',
   'skia_git': 'https://skia.googlesource.com',
   'swiftshader_git': 'https://swiftshader.googlesource.com',
-  'webrtc_git': 'https://webrtc.googlesource.com',
+  #'webrtc_git': 'https://webrtc.googlesource.com',
+  'webrtc_git': 'https://github.com',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling Skia
   # and whatever else without interference from each other.
@@ -1583,7 +1584,7 @@ deps = {
     Var('chromium_git') + '/external/github.com/gpuweb/cts.git' + '@' + '6ac8b328a4d1f08cd4069b48d2ddd9634548daf3',
 
   'src/third_party/webrtc':
-    Var('webrtc_git') + '/src.git' + '@' + '2d3ba08513c21dc7aeeee7dc7220800eb4f0f46d',
+    Var('webrtc_git') + '/mainframe2/googlesource_webrtc_public.git' + '@' + '9259f9971fe9156eae69e7c63e76b2d9dfd7fad4',
 
   'src/third_party/libgifcodec':
      Var('skia_git') + '/libgifcodec' + '@'+  Var('libgifcodec_revision'),
