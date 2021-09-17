@@ -147,7 +147,6 @@ scoped_refptr<media::VideoFrame> CopyFrame(
                           new_frame->stride(media::VideoFrame::kVPlane),
                           coded_size.width(), coded_size.height());
     }
-    
   }
 
   // Transfer metadata keys.

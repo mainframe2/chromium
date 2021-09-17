@@ -39,8 +39,7 @@ absl::optional<media::VideoCodecProfile> WebRTCFormatToCodecProfile(
       return absl::nullopt;
 #endif
 
-    return media::VideoCodecProfile::
-        H264PROFILE_HIGH444PREDICTIVEPROFILE;  // media::VideoCodecProfile::H264PROFILE_MIN;
+    return media::VideoCodecProfile::H264PROFILE_MIN;
   } else if (sdp.name == "VP8") {
     return media::VideoCodecProfile::VP8PROFILE_MIN;
   } else if (sdp.name == "VP9") {
