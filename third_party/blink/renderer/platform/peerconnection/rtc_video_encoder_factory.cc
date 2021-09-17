@@ -135,8 +135,7 @@ absl::optional<webrtc::SdpVideoFormat> VEAToWebRTCFormat(
     }
     webrtc::SdpVideoFormat format("VP9");
     format.parameters = {
-        {webrtc::kVP9FmtpProfileId,
-         webrtc::VP9ProfileToString(vp9_profile)}};
+        {webrtc::kVP9FmtpProfileId, webrtc::VP9ProfileToString(vp9_profile)}};
     return format;
   }
 
