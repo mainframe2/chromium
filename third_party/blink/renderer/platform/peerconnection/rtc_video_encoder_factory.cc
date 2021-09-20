@@ -92,6 +92,9 @@ absl::optional<webrtc::SdpVideoFormat> VEAToWebRTCFormat(
       case media::H264PROFILE_HIGH:
         h264_profile = webrtc::H264::kProfileHigh;
         break;
+      case media::H264PROFILE_HIGH444PREDICTIVEPROFILE:
+        h264_profile = webrtc::H264::kProfilePredictiveHigh444;
+        break;
       default:
         // Unsupported H264 profile in WebRTC.
         return absl::nullopt;
@@ -132,8 +135,7 @@ absl::optional<webrtc::SdpVideoFormat> VEAToWebRTCFormat(
     }
     webrtc::SdpVideoFormat format("VP9");
     format.parameters = {
-        {webrtc::kVP9FmtpProfileId,
-         webrtc::VP9ProfileToString(vp9_profile)}};
+        {webrtc::kVP9FmtpProfileId, webrtc::VP9ProfileToString(vp9_profile)}};
     return format;
   }
 
